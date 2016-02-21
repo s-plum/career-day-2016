@@ -4,16 +4,16 @@
 
 ## Stack
 
-* [Node.js](https://nodejs.org/en/)
-* [Express](http://expressjs.com/)
-* [Jade](http://jade-lang.com/)
-* [Sass](http://sass-lang.com/)
+* [Node.js](https://nodejs.org/en/) - your friendly neighborhood server
+* [Express](http://expressjs.com/) - web framework
+* [Jade](http://jade-lang.com/) - template engine
+* [Sass](http://sass-lang.com/) - CSS with superpowers
 
 ## Build tools
 
-* Compass (CSS compilation)
-* Browserify (JS dependency management/minification)
-* Gulp (build tool to run the show)
+* [Compass](http://compass-style.org/) - CSS compilation
+* [Browserify](http://browserify.org/) - Javascript dependency management/minification
+* [Gulp](http://gulpjs.com/) - build tool to run the show
 
 ## Running locally
 
