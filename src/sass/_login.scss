@@ -1,0 +1,43 @@
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }   
+    100% {
+        opacity: 1;
+    }
+}
+
+.login {
+    background: url("/img/login.jpg") no-repeat center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    &:before {
+        @extend %fill;
+        background: url("/img/login-cover.png") no-repeat center;
+        background-size: cover;
+        content: "";
+    }
+
+    .js & {
+        &:before {
+            animation: fadein 300ms ease 1s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            transform: translate3d(0,0,0);
+        }
+    }
+
+    input {
+        background: #ffbb12;
+        border: 0;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate3d(-50%,-50%,0);
+        min-width: 250px;
+        width: 50%;
+        resize: none;
+    }
+}

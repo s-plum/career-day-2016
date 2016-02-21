@@ -1,0 +1,36 @@
+#leap-motion-demo {
+    @extend %fill;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    > div {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    #output {
+        display: none;
+    }
+
+
+    canvas {
+        @extend %fill;
+        z-index: 1;
+    }
+
+    ol {
+        list-style: none;
+        margin: 1em 0;
+
+        li {
+            margin-bottom: 0.5em;
+
+            &.current {
+                font-weight: 400;
+            }
+        }
+    }
+}

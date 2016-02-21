@@ -1,0 +1,224 @@
+@keyframes swap-plum {
+    0% {
+        transform: translate3d(0,0,0);
+        z-index: 2;
+    }
+    10% {
+        z-index: 2;
+    }
+    25% {
+        transform: translate3d(0,0,0);
+        z-index: 2;
+    }
+    50% {
+        transform: translate3d(100%,0,0);
+        z-index: 2;
+    }
+    60% {
+        z-index: 1;
+    }
+    75% {
+        transform: translate3d(100%,0,0);
+        z-index: 1;
+    }
+    100% {
+        transform: translate3d(0,0,0);
+
+    }
+}
+
+@keyframes swap-nom {
+    0% {
+        transform: translate3d(0,0,0);
+        z-index: 1;
+    }
+    10% {
+        z-index: 1;
+    }
+    25% {
+        transform: translate3d(0,0,0);
+        z-index: 1;
+    }
+    50% {
+        transform: translate3d(-100%,0,0);
+        z-index: 1;
+    }
+    60% {
+        z-index: 2;
+    }
+    75% {
+        transform: translate3d(-100%,0,0);
+        z-index: 2;
+    }
+    100% {
+        transform: translate3d(0,0,0);
+        z-index: 2;
+    }
+}
+
+.history, .web, .links, .thanks {
+    background: $plum;
+    color: #fff;
+}
+
+.start {
+    h1 {
+        text-align: center;
+
+        b {
+            color: $plum;
+            font-weight: 400;
+        }
+    }
+
+    .plumnom {
+        display: flex;
+        align-items: flex-end;
+        flex-flow: row nowrap;
+        margin: 0 auto;
+        width: 16em;
+
+        > div {
+            box-sizing: border-box;
+            padding: 10px;
+            position: relative;
+            width: 50%;
+        }
+
+        .plum {
+            animation: 5s swap-plum ease infinite;
+        }
+
+        .nom {
+            animation: 5s swap-nom ease infinite;
+        }
+    }
+}
+
+.history {
+    h2 {
+        text-align: center;
+    }
+
+    img {
+        box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.3);
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 800px;
+        transform: rotate(1deg);
+    }
+}
+
+.nyc {
+    > div {
+        @extend %fill;
+        box-sizing: border-box;
+        padding: 30px;
+        transition: transform 1.5s ease;
+        transform: translate3d(57%, 80%, 0);
+        z-index: 1;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    img {
+        position: absolute;
+        right: 0;
+        width: 110%;
+        bottom: 0;
+        transform: translate3d(5%,0,0);
+        transition: transform 2s ease;
+        z-index: 2;
+    }
+
+    &[data-active="true"] {
+        > div {
+            transform: translate3d(57%, 20%, 0);
+        }
+
+        img {
+            transform: translate3d(0,0,0);
+        }
+    }
+}
+
+.tabs {
+    button {
+        background: $plum;
+        border: 0;
+        border-radius: 5px;
+        color: #fff;
+        font: 400 30px 'Lato';
+        padding: 0.25em 1em;
+        transform: translate3d(0,0,0);
+        transition: background 300ms ease;
+
+        @media (min-width: 600px) {
+            font-size: 50px;
+        }
+
+        &:hover, &:focus {
+            background: lighten($plum, 10%);
+        }
+    }
+}
+
+.links, .end {
+    h2 {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    ul, ol {
+        font-size: 22px;
+        margin: 2em 0 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 0.75em;
+    }
+
+    a {
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
+        transition: background 300ms ease;
+    }
+}
+
+.links {
+    li {
+        text-align: center;
+    }
+
+    a {
+        color: rgba(255,255,255,0.75);
+
+        &:hover, &:focus {
+            color: #fff;
+        }
+    }
+}
+
+.end {
+    ol {
+        padding-left: 1em;
+    }
+
+    li {
+        padding-left: 5px;
+    }
+}
+
+.thanks {
+    h2 {
+        line-height: 1.25em;
+        text-align: center;
+    }
+}

@@ -1,0 +1,54 @@
+#verizon {
+    @extend %fill;
+    box-sizing: border-box;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px;
+    text-align: center;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+
+        li {
+            box-sizing: border-box;
+            padding: 5px;
+            width: 100%;
+
+            @media (min-width: 600px) {
+
+                &:nth-child(1) {
+                    width: 34.33333333%;
+                }
+
+                &:nth-child(2) {
+                    width: 65.66667%;
+                }
+
+                &:nth-child(3) {
+                    width: 57%;
+                }
+
+                &:nth-child(4) {
+                    width: 43%;
+                }
+
+                &:nth-child(5) {
+                    width: 43%
+                }
+
+                &:nth-child(6) {
+                    width: 57%;
+                }
+            }
+
+            img, video {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+}

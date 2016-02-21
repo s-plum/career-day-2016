@@ -1,0 +1,214 @@
+@keyframes enter-top {
+    0% {
+        transform: translate3d(0,-100%,0);
+    }
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes enter-bottom {
+    0% {
+        transform: translate3d(0,100%,0);
+    }
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes enter-left {
+    0% {
+        transform: translate3d(-100%,0,0);
+    }
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes enter-right {
+    0% {
+        transform: translate3d(100%,0,0);
+    }
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes exit-top {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(0,-100%,0);
+    }
+}
+
+@keyframes exit-bottom {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(0,100%,0);
+    }
+}
+
+@keyframes exit-left {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(-100%,0,0);
+    }
+}
+
+@keyframes exit-right {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(100%,0,0);
+    }
+}
+
+html, body {
+    font: 300 16px/1 'Lato', 'Arial', sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+}
+
+h1, h2 {
+    font-size: 2em;
+}
+
+main {
+    section {
+        height: 100vh;
+        position: relative;
+        @extend %fill;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .js & {
+        @extend %fill;
+
+        section {
+            @extend %fill;
+            z-index: 1;
+            transform: translate3d(200%,0,0);
+
+            &:nth-child(1) {
+                transform: translate3d(0,0,0);
+            }
+
+            &[data-animation="enter-top"] {
+                animation: $animationSpeed enter-top $animationFunction forwards;
+            }
+
+            &[data-animation="enter-bottom"] {
+                animation: $animationSpeed enter-bottom $animationFunction forwards;
+            }
+
+            &[data-animation="enter-left"] {
+                animation: $animationSpeed enter-left $animationFunction forwards;
+            }
+
+            &[data-animation="enter-right"] {
+                animation: $animationSpeed enter-right $animationFunction forwards;
+            }
+
+            &[data-animation="exit-top"] {
+                animation: $animationSpeed exit-top $animationFunction forwards;
+            }
+
+            &[data-animation="exit-bottom"] {
+                animation: $animationSpeed exit-bottom $animationFunction forwards;
+            }
+
+            &[data-animation="exit-left"] {
+                animation: $animationSpeed exit-left $animationFunction forwards;
+            }
+
+            &[data-animation="exit-right"] {
+                animation: $animationSpeed exit-right $animationFunction forwards;
+            }
+        }
+    }
+}
+
+#controls {
+    display: none;
+
+    .js & {
+        display: block;
+
+        button {
+            background: url("/img/chevron.svg") no-repeat center / 100% auto;
+            border: 0;
+            height: 35px;
+            opacity: 0.5;
+            overflow: hidden;
+            position: absolute;
+            text-align: left;
+            text-indent: -9999em;
+            transition: opacity 300ms ease;
+            width: 20px;
+            z-index: 2;
+
+            &.light {
+                background-image: url("/img/chevron-alt.svg")
+            }
+
+            &:hover, &:focus {
+                opacity: 1;
+            }
+
+            &[disabled] {
+                opacity: 0;
+                transition: none;
+
+                &:hover, &:focus {
+                    opacity: 0;
+                }
+            }
+
+            &#controls-top, &#controls-bottom {
+                left: 50%;
+            }
+
+            &#controls-top {
+                top: 10px;
+                transform: translate3d(-50%,0,0) rotate(-90deg);
+            }
+
+            &#controls-bottom {
+                bottom: 10px;
+                transform: translate3d(-50%,0,0) rotate(90deg);
+            }
+
+            &#controls-left, &#controls-right {
+                top: 50%;
+                transform: translate3d(0,-50%,0);
+            }
+
+            &#controls-left {
+                left: 10px;
+                transform: translate3d(0,-50%,0) rotate(180deg);
+            }
+
+            &#controls-right {
+                right: 10px;
+                transform: translate3d(0,-50%,0);
+            }
+        }
+    }
+}

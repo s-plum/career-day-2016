@@ -1,0 +1,85 @@
+extends layout
+
+block content
+    #controls
+        button#controls-left(type='button', disabled="disabled")
+            | Left for next slide
+        button#controls-right(type='button', disabled="disabled")
+            | Right for previous slide
+        button#controls-top(type='button', disabled="disabled")
+            | Up for previous slide
+        button#controls-bottom(type='button')
+            | Down for next slide
+
+    main#slides
+        section.start(data-controls='down')
+            div
+                .plumnom
+                    .plum
+                        img(src='/img/plum.svg')
+                    .nom
+                        img(src='/img/nom.svg')
+                h1
+                    | hi, I'm stephanie <b>plum</b>eri
+
+        section.history(data-controls='up,right')
+            div
+                h2
+                    | I went here!
+                img(src='/img/proof.jpg',alt='me sitting in the parking lot, circa high school')
+
+        section.nyc(data-controls='left,right')
+            div
+                h2
+                    | I work here.
+            img(src='/img/skyline.svg', alt='New York City Skyline')
+
+        section.web(data-controls='left,down')
+            div
+                h2
+                    | I build things.
+
+        section.tabs(data-controls='up,down')
+            button#tabsplosion(type='button')
+                | TABSPLOSION
+
+        section.links(data-controls='up,right')
+            div
+                h2
+                    | You can build things, too.
+
+                ul
+                    li
+                        a(href='https://www.codecademy.com/')
+                            | Codecademy
+                    li
+                        a(href='https://css-tricks.com/')
+                            | CSS Tricks
+                    li
+                        a(href='http://stackoverflow.com/')
+                            | Stack Overflow
+                    li
+                        a(href='https://www.google.com')
+                            | The all-powerful, all-knowing Google
+        section.end(data-controls='left,down')
+            div
+                h2
+                    | The learning process:
+                ol
+                    li
+                        | Make something.
+                    li
+                        | Break it.
+                    li
+                        | Fix it.
+                    li
+                        | Break it again.
+                    li
+                        | Fix it again.
+                    li
+                        | Repeat.
+        section.thanks(data-controls='up')
+            div
+                h2
+                    | Thanks for listening.<br/>Go build things!
+

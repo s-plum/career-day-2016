@@ -1,0 +1,18 @@
+doctype html
+html(data-touch=isMobile ? 'true':'false')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width')
+    script.
+        document.querySelector('html').className = 'js';
+    title
+        if pageTitle
+            | !{pageTitle} | CHS Career Day 2016
+        else
+            | CHS Career Day 2016
+    link(rel='stylesheet', href='/css/main.css')
+    block head
+  body(class=section)
+    block content
+    script(src='/js/main.min.js')
+    block scripts
